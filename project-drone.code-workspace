@@ -6,6 +6,9 @@
 		{
 			"name": "drone",
 			"path": "drone"
+		},
+		{
+			"path": "app"
 		}
 	],
 	"settings": {}
