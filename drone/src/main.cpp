@@ -5,9 +5,9 @@ void setup()
 {
     Serial.begin(115200);
     delay(10000);
-    bool socket_status = setupSocket();
 
     Serial.println("Setting up...");
+    bool socket_status = setupSocket();
 
     if (socket_status)
     {

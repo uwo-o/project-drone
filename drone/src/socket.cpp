@@ -4,7 +4,6 @@ bool setupSocket()
 {
     bool success = true;
     WiFi.begin(WIFI_SSID, WIFI_PWS);
-    Serial.println("\nConnecting");
 
     int timeout = 300;
 
@@ -21,10 +20,6 @@ bool setupSocket()
         delay(100);
         timeout--;
     }
-
-    Serial.println("\nConnected to the WiFi network");
-    Serial.print("Local ESP32 IP: ");
-    Serial.println(WiFi.localIP());
 
     return success;
 }
