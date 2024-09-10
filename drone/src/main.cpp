@@ -1,10 +1,13 @@
 #include <Arduino.h>
 #include "socket.h"
+#include "buzzer.h"
 #include "constants.h"
 
 void setup()
 {
     Serial.begin(115200);
+    setupBuzzer();
+    buzzer_accept();
 
     if (DEVELOPMENT)
         delay(10000);
@@ -19,6 +22,17 @@ void setup()
 
     if (DEVELOPMENT)
         Serial.printf("%s Wifi and socket.", socket_status ? "[OK]" : "[ERROR]");
+
+    if (!socket_status)
+    {
+        buzzer_error();
+        return;
+    }
+
+    if (DEVELOPMENT)
+        Serial.println("All components are ready.");
+
+    buzzer_accept();
 }
 
 void loop()
