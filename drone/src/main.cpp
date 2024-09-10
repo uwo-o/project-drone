@@ -13,6 +13,8 @@ void setup()
     if (DEVELOPMENT)
         delay(10000);
 
+    buzzer_accept();
+
     if (DEVELOPMENT)
         Serial.println("Setting up all components.");
 
