@@ -30,7 +30,7 @@ void setup()
     }
 
     if (DEVELOPMENT)
-        Serial.println("All components are ready.");
+        Serial.println("\nAll components are ready.");
 
     buzzer_accept();
 }
