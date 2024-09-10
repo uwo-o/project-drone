@@ -1,18 +1,24 @@
 #include <Arduino.h>
 #include "socket.h"
+#include "constants.h"
 
 void setup()
 {
     Serial.begin(115200);
-    delay(10000);
 
-    Serial.println("Setting up...");
+    if (DEVELOPMENT)
+        delay(10000);
+
+    if (DEVELOPMENT)
+        Serial.println("Setting up all components.");
+
     bool socket_status = setupSocket();
 
-    if (socket_status)
-    {
-        Serial.printf("Wifi and socket. %s", socket_status ? "[OK]" : "[ERROR]");
-    }
+    if (DEVELOPMENT)
+        Serial.println("");
+
+    if (DEVELOPMENT)
+        Serial.printf("%s Wifi and socket.", socket_status ? "[OK]" : "[ERROR]");
 }
 
 void loop()
