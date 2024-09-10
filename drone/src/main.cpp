@@ -2,6 +2,7 @@
 #include "socket.h"
 #include "buzzer.h"
 #include "constants.h"
+#include "mpu_6050.h"
 
 void setup()
 {
@@ -16,14 +17,15 @@ void setup()
         Serial.println("Setting up all components.");
 
     bool socket_status = setupSocket();
+    bool mpu_status = setup_mpu6050();
 
     if (DEVELOPMENT)
-        Serial.println("");
+        Serial.printf("\n%s Wifi and socket.", socket_status ? "[OK]" : "[ERROR]");
 
     if (DEVELOPMENT)
-        Serial.printf("%s Wifi and socket.", socket_status ? "[OK]" : "[ERROR]");
+        Serial.printf("\n%s MPU6050.", mpu_status ? "[OK]" : "[ERROR]");
 
-    if (!socket_status)
+    if (!socket_status || !mpu_status)
     {
         buzzer_error();
         return;
@@ -38,5 +40,25 @@ void setup()
 void loop()
 {
     loopSocket();
+    MpuData *data = read_mpu6050();
+
+    if (DEVELOPMENT)
+    {
+        Serial.print("Acc: ");
+        Serial.print(data->acc_x);
+        Serial.print(" ");
+        Serial.print(data->acc_y);
+        Serial.print(" ");
+        Serial.print(data->acc_z);
+        Serial.print(" | Gyro: ");
+        Serial.print(data->gyro_x);
+        Serial.print(" ");
+        Serial.print(data->gyro_y);
+        Serial.print(" ");
+        Serial.print(data->gyro_z);
+        Serial.print(" | Temp: ");
+        Serial.println(data->temp);
+    }
+
     delay(1000);
 }
