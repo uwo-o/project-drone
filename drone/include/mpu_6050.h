@@ -20,5 +20,6 @@ typedef struct
 
 bool setup_mpu6050();
 MpuData *read_mpu6050();
+void print_mpu_data(MpuData *data);
 
 #endif

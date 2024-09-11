@@ -41,3 +41,21 @@ MpuData *read_mpu6050()
 
     return data;
 }
+
+void print_mpu_data(MpuData *data)
+{
+    Serial.print("Acc: ");
+    Serial.print(data->acc_x);
+    Serial.print(" ");
+    Serial.print(data->acc_y);
+    Serial.print(" ");
+    Serial.print(data->acc_z);
+    Serial.print(" | Gyro: ");
+    Serial.print(data->gyro_x);
+    Serial.print(" ");
+    Serial.print(data->gyro_y);
+    Serial.print(" ");
+    Serial.print(data->gyro_z);
+    Serial.print(" | Temp: ");
+    Serial.println(data->temp);
+}
