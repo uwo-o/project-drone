@@ -6,8 +6,7 @@
 #include <WebSocketsServer.h>
 #include "constants.h"
 
-void webSocketEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length);
-bool setupSocket();
-void loopSocket();
+bool setup_socket();
+void loop_socket();
 
 #endif

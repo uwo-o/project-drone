@@ -1,6 +1,6 @@
 #include "socket.h"
 
-bool setupSocket()
+bool setup_socket()
 {
     bool success = true;
     WiFi.begin(WIFI_SSID, WIFI_PWS);
@@ -24,6 +24,6 @@ bool setupSocket()
     return success;
 }
 
-void loopSocket()
+void loop_socket()
 {
 }

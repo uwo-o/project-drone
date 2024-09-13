@@ -4,7 +4,7 @@
 #include "Arduino.h"
 #include "constants.h"
 
-void setupBuzzer();
+void setup_buzzer();
 void buzzer_accept();
 void buzzer_error();
 

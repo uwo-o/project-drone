@@ -1,5 +1,5 @@
 #include "buzzer.h"
-void setupBuzzer()
+void setup_buzzer()
 {
     pinMode(BUZZER_PIN, OUTPUT);
 }
@@ -10,5 +10,7 @@ void buzzer_accept()
 
 void buzzer_error()
 {
+    tone(BUZZER_PIN, 880, 100);
+    delay(100);
     tone(BUZZER_PIN, 880, 100);
 }

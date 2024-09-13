@@ -9,5 +9,6 @@ const int MPU_6050_BUS = 0;
 const int MPU_6050_DIR = 0x68;
 const int MPU_6050_SDA = 26;
 const int MPU_6050_SCL = 27;
+const int GPS_BAUDRATE = 9600;
 
 #endif
