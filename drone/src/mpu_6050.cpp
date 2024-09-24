@@ -2,15 +2,15 @@
 
 Adafruit_MPU6050 mpu;
 
-TwoWire I2Cone = TwoWire(MPU_6050_BUS);
+TwoWire I2ConeMPU = TwoWire(MPU_6050_BUS);
 
 bool setup_mpu6050()
 {
     bool status = true;
 
-    I2Cone.begin(MPU_6050_SDA, MPU_6050_SCL);
+    I2ConeMPU.begin(MPU_6050_SDA, MPU_6050_SCL);
 
-    if (!mpu.begin(MPU_6050_DIR, &I2Cone))
+    if (!mpu.begin(MPU_6050_DIR, &I2ConeMPU))
         status = false;
 
     if (!status)

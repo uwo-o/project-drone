@@ -10,5 +10,9 @@ const int MPU_6050_DIR = 0x68;
 const int MPU_6050_SDA = 26;
 const int MPU_6050_SCL = 27;
 const int GPS_BAUDRATE = 9600;
+const int BMP_280_BUS = 1;
+const int BMP_280_SDA = 21;
+const int BMP_280_SCL = 22;
+const int BMP_280_DIR = 0x76;
 
 #endif
