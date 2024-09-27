@@ -13,6 +13,7 @@ public:
     void stop();
     void start();
     void set_speed(int speed);
+    void step();
 
 private:
     int pin;

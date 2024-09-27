@@ -34,3 +34,17 @@ void Motor::set_speed(int speed)
     this->speed = speed;
     ledcWrite(MOTORS_CHANNEL, this->speed);
 }
+
+void Motor::step()
+{
+    if (this->speed < this->max_dutty_cicle)
+    {
+        this->speed++;
+        ledcWrite(MOTORS_CHANNEL, this->speed);
+    }
+    else
+    {
+        this->speed = 0;
+        ledcWrite(MOTORS_CHANNEL, this->speed);
+    }
+}
