@@ -14,5 +14,13 @@ const int BMP_280_BUS = 1;
 const int BMP_280_SDA = 21;
 const int BMP_280_SCL = 22;
 const int BMP_280_DIR = 0x76;
+const int MOTOR1_PIN = 32;
+const int MOTOR2_PIN = 33;
+const int MOTOR3_PIN = 25;
+const int MOTOR4_PIN = 14;
+const int MAX_VEL = 255;
+const int MIN_VEL = 0;
+const int IDLE_VEL = 200;
+const int LOW_VEL = 150;
 
 #endif
