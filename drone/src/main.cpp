@@ -5,6 +5,9 @@
 #include "mpu_6050.h"
 #include "bmp_280.h"
 #include "gps.h"
+#include "controller.h"
+
+Controller controller(MOTOR1_PIN, MOTOR2_PIN, MOTOR3_PIN, MOTOR4_PIN);
 
 void setup()
 {
