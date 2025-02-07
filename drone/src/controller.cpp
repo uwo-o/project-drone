@@ -68,3 +68,16 @@ void Controller::down()
     _motor3.setSpeed(LOW_VEL);
     _motor4.setSpeed(LOW_VEL);
 }
+
+void Controller::step()
+{
+    int motor1 = _motor1.getSpeed();
+    int motor2 = _motor2.getSpeed();
+    int motor3 = _motor3.getSpeed();
+    int motor4 = _motor4.getSpeed();
+
+    analogWrite(MOTOR1_PIN, motor1);
+    analogWrite(MOTOR2_PIN, motor2);
+    analogWrite(MOTOR3_PIN, motor3);
+    analogWrite(MOTOR4_PIN, motor4);
+}

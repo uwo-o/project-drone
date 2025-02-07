@@ -24,6 +24,7 @@ public:
     void down();
     void rotateLeft();
     void rotateRight();
+    void step();
 };
 
 #endif
